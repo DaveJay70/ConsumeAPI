@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CityModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>City List</h2>
+
+<p>
+    <a class="btn btn-sm btn-outline-success" asp-controller="City" asp-action="GET" >Add New City</a>
+</p>
+
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>StateName</th>
+            <th>CountryName</th>
+            <th>CityName</th>
+            <th>Pincode</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <th>@item.StateName</th>
+                <th>@item.CountryName</th>
+                <th>@item.CityName</th>
+                <th>@item.PinCode</th>
+                <th>
+                    <a class="btn btn-sm btn-primary">Edit</a>
+                    <a class="btn btn-sm btn-danger">Delete</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+
